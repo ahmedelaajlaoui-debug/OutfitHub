@@ -1,60 +1,65 @@
+/* *permmet d'applique le style àtous les balsie */
 *{
+    /* supprime la margin et les empalcement interne (padding) qui sont met par défaut  */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; pour evite les dépassent et permet aussi d'inclure pading et la bordure dans la largeur (width)et hauteur(height) définie */
     font-family: "Montserrat", sans-serif;
 }
 
 body{
     width: 100%;
-    padding-top: 80px;
+    padding-top: 80px;/*laisser un espace en haut et evité que le contenu passe le header car le header est fixe */
    font-family: "Montserrat", sans-serif;;
 }
 #header{
-    display: flex;
-    align-items: center;
-    justify-content:space-between ;
+    display: flex;/* organise les élemnt en ligne */
+    align-items: center;/* center verticalement */
+    justify-content:space-between ;/* un espace entre la laogod epage est les site de navigation */
     padding: 20px 50px;
     background:#E3E6F3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-    z-index: 999;
-    top: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);/* ajouter un ombre */
+    z-index: 999;/* reste au-dessus de tous les élemment  si z-index petit reset en dessous*/
+    top: 0;/* coller élmmenten haut */
     width: 100%;
-    position: fixed;
-    left: 0;
+    position: fixed;/* le header reste toujour en haut  */
+    left: 0;/* coller élmment à gauche */
 }
 #header img{
-    width: 100px;
-    padding-left: 10px;
+    width: 100px;/* définre la taile de logo */
+    padding-left: 10px;/* laiiser un petite espace à gauche */
 }
 #navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex;/* permet d'afficher les lien en ligne*/
+    align-items: center;/* center verticalment */
+    justify-content: center;/* center horizontamnet  */
 }
 #navbar li{
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
+    list-style: none;/*pour supprimer les puce de la liste */
+    padding: 0 20px; 
+    position: relative; /*dans cette propritê élmment reste dans sa palce normale ,mais en peut ajouter des effet ou dêcaler.. */
 }
 #navbar li a{
+    /* élimné le soulignement */
     text-decoration: none;
-    
-    font-size: 16px;
-    font-weight:600; 
+    /* la taile de texte */
+    font-size: 16px;/* la taile de texte */
+    font-weight:600; /* */
     color: #1a1a1a;
-    transition: 0.3s ease; ;
+    transition: 0.3s ease; /*"0.3s" la dureé de l'animation "ease" type d'animation comnce lentement accélére au milieu et ralentir à la fin */
     }
-#navbar li a:hover{
-    color: #088178;
-}
+
+/*effets lors de survol */
 #navbar li a:hover,#navbar li a:active{
-    color: #088178;}
-#navbar li a.active::after,#navbar li a:hover::after{
-    content: '';
-    width: 30%;
-    height: 2px;
+    color: #088178;/* hover: lorsque en passe la souris au-dessus ,active: lorsque en clique*/
+    }
+
+#navbar li a:hover::after{
+    content:'';/*permet de cree un ligne sous les lien*/
+    width: 30%;/* la largeur de la ligne*/
+    height: 2px;/*epaisseur de la ligne*/
     background-color: #088178;
     position: absolute;
-    bottom: -4px;
-    left: 20px;}
+    bottom: -4px;/* placer la ligne juste en dessous de lien */
+    left: 20px;/*décle la ligne vers la droite*/
+    }
