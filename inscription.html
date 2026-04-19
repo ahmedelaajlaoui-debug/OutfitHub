@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Inscription-Boutique Vêtements</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body class="body-inscription">
+
+    <section class="container-flex">
+        <form action="#" method="post" class="form-card">
+            <h2>OutfitHub</h2>
+            <p style="font-size:14px;margin-bottom:10px">Inscrivez-vous pour voir plus d'idées</p>
+
+            <label>Nom complet</label>
+            <input type="text" name="nom" placeholder="Votre nom complet" required>
+
+            <label>E-mail</label>
+            <input type="text" name="nom" placeholder="Votre@mail.com" required>
+
+            <label>Mot de passe</label>
+            <input type="password" name="pass" placeholder="Crée un mot passe" minlength="8" required>
+            <p class="instructions">Doit contenir au moins 8 caractéres.</p>
+
+            <div class="genre-group">
+                <label>Genre:</label>
+                <input type="radio" name="genre" value="F" id="f" required> <label for="f">Femme</label>
+                <input type="radio" name="genre" value="H" id="h"> <label for="h">Homme</label>
+            </div>
+
+            <input type="submit" value="Continuer" class="btn-red">
+
+            <p class="terms-text">
+                En continuant,vous acceptez les<b>Conditions d'utilisation de notre boutique et confirmez que vous avez lu notre<b>Politiquede confidentialités</b>
+            </p>
+
+            <hr>
+
+            <p class="login-link">
+                Vous avez déja un compte ?<a href="#">Connectez-vous</a>
+            </p>
+
+        </form>
+    </section>
+
+</body>
+</html>
