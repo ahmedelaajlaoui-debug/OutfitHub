@@ -123,16 +123,20 @@ body{
     color: #fff;
     border-color: #088178;
 }
-#hero button{
+#hero button a{
     margin: 10px;
+    text-decoration: none;
     color: #088178;
+    
     border: 0;
-    padding: 10px 40px 10px 40px;
+    padding: 20px 40px 20px 20px;
     background-repeat: no-repeat;
     cursor: pointer;
     font-weight: 700;
     font-size: 20px;
 }
+
+
 #section3 div{
     width: 180px;
     text-align: center;
@@ -247,8 +251,7 @@ body{
     border: 1px solid #E3E6F3 ;
 
 }
-<<<<<<< HEAD
-=======
+
 .section-m1{
     margin: 50px 0;
 }
@@ -293,6 +296,7 @@ button.normal{
      
 }
 #newsletter{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -336,6 +340,7 @@ button.normal{
 footer{
    display: flex; 
    flex-wrap: wrap;
+   width: 100%;
    justify-content: space-between;
     background:#E3E6F3;
    
@@ -390,4 +395,3 @@ footer .follow i:hover,footer a:hover{
     
 
 }
->>>>>>> 068eded (Ajout des images et Ajouter des  structure)
