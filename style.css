@@ -1,5 +1,5 @@
 /* *permmet d'applique le style àtous les balsie */
-*{
+* {
     /* supprime la margin et les empalcement interne (padding) qui sont met par défaut  */
     margin: 0;
     padding: 0;
@@ -8,63 +8,96 @@
     box-sizing: border-box;
 }
 
-body{
-   
-    padding-top: 80px;/*laisser un espace en haut et evité que le contenu passe le header car le header est fixe */
-   font-family: "Montserrat", sans-serif;;
+body {
+
+    padding-top: 80px;
+    /*laisser un espace en haut et evité que le contenu passe le header car le header est fixe */
+    font-family: "Montserrat", sans-serif;
+    ;
 }
-#header{
-    display: flex;/* organise les élemnt en ligne */
-    align-items: center;/* center verticalement */
-    justify-content:space-between ;/* un espace entre la laogod epage est les site de navigation */
+
+#header {
+    display: flex;
+    /* organise les élemnt en ligne */
+    align-items: center;
+    /* center verticalement */
+    justify-content: space-between;
+    /* un espace entre la laogod epage est les site de navigation */
     padding: 20px 50px;
-    background:#E3E6F3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.06);/* ajouter un ombre */
-    z-index: 999;/* reste au-dessus de tous les élemment  si z-index petit reset en dessous*/
-    top: 0;/* coller élmmenten haut */
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    /* ajouter un ombre */
+    z-index: 999;
+    /* reste au-dessus de tous les élemment  si z-index petit reset en dessous*/
+    top: 0;
+    /* coller élmmenten haut */
     width: 100%;
-    position: fixed;/* le header reste toujour en haut  */
-    left: 0;/* coller élmment à gauche */
+    position: fixed;
+    /* le header reste toujour en haut  */
+    left: 0;
+    /* coller élmment à gauche */
 }
-#header img{
-    width: 100px;/* définre la taile de logo */
-    padding-left: 10px;/* laiiser un petite espace à gauche */
+
+#header img {
+    width: 100px;
+    /* définre la taile de logo */
+    padding-left: 10px;
+    /* laiiser un petite espace à gauche */
 }
-#navbar{
-    display: flex;/* permet d'afficher les lien en ligne*/
-    align-items: center;/* center verticalment */
-    justify-content: center;/* center horizontamnet  */
+
+#navbar {
+    display: flex;
+    /* permet d'afficher les lien en ligne*/
+    align-items: center;
+    /* center verticalment */
+    justify-content: center;
+    /* center horizontamnet  */
 }
-#navbar li{
-    list-style: none;/*pour supprimer les puce de la liste */
-    padding: 0 20px; 
-    position: relative; /*dans cette propritê élmment reste dans sa palce normale ,mais en peut ajouter des effet ou dêcaler.. */
+
+#navbar li {
+    list-style: none;
+    /*pour supprimer les puce de la liste */
+    padding: 0 20px;
+    position: relative;
+    /*dans cette propritê élmment reste dans sa palce normale ,mais en peut ajouter des effet ou dêcaler.. */
 }
-#navbar li a{
+
+#navbar li a {
     /* élimné le soulignement */
     text-decoration: none;
     /* la taile de texte */
-    font-size: 16px;/* la taile de texte */
-    font-weight:600; /* */
+    font-size: 16px;
+    /* la taile de texte */
+    font-weight: 600;
+    /* */
     color: #1a1a1a;
-    transition: 0.3s ease; /*"0.3s" la dureé de l'animation "ease" type d'animation comnce lentement accélére au milieu et ralentir à la fin */
-    }
+    transition: 0.3s ease;
+    /*"0.3s" la dureé de l'animation "ease" type d'animation comnce lentement accélére au milieu et ralentir à la fin */
+}
 
 /*effets lors de survol */
-#navbar li a:hover,#navbar li a:active{
-    color: #088178;/* hover: lorsque en passe la souris au-dessus ,active: lorsque en clique*/
-    }
+#navbar li a:hover,
+#navbar li a:active {
+    color: #088178;
+    /* hover: lorsque en passe la souris au-dessus ,active: lorsque en clique*/
+}
 
-#navbar li a:hover::after{
-    content:'';/*permet de cree un ligne sous les lien*/
-    width: 30%;/* la largeur de la ligne*/
-    height: 2px;/*epaisseur de la ligne*/
+#navbar li a:hover::after {
+    content: '';
+    /*permet de cree un ligne sous les lien*/
+    width: 30%;
+    /* la largeur de la ligne*/
+    height: 2px;
+    /*epaisseur de la ligne*/
     background-color: #088178;
     position: absolute;
-    bottom: -4px;/* placer la ligne juste en dessous de lien */
-    left: 20px;/*décle la ligne vers la droite*/
-    }
-#hero{
+    bottom: -4px;
+    /* placer la ligne juste en dessous de lien */
+    left: 20px;
+    /*décle la ligne vers la droite*/
+}
+
+#hero {
     background-image: url('images/hero.jpeg');
     height: 90vh;
     width: 100%;
@@ -77,25 +110,28 @@ body{
     align-items: flex-start;
     justify-content: center;
 
-    
+
 }
-#hero h4{
+
+#hero h4 {
     padding-bottom: 15px;
-    color:white;
+    color: white;
     font-size: 16px;
 }
-#hero h1{
-    color:#088178
-    
+
+#hero h1 {
+    color: #088178
 }
-#hero h2{
-    color:white;
+
+#hero h2 {
+    color: white;
     font-size: 18px;
 }
-#hero p{
+
+#hero p {
     margin: 12px;
     font-size: 20px;
-    color:white;
+    color: white;
 }
 
 .filter-buttons {
@@ -118,43 +154,52 @@ body{
     transition: 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background-color: #088178;
     color: #fff;
     border-color: #088178;
 }
-#hero button {
-    margin: 10px;
-    text-decoration: none;
-    color: #088178;
-    background-color: yellowgreen;
-    border: 0;
-    padding: 20px 40px 20px 20px;
-    
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
     cursor: pointer;
-    
-}
-#hero button a{
-    text-decoration: none;
-    color: #088178;;
-     font-weight: 700;
-    font-size: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#section3 div{
+
+button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+#section3 div {
     width: 180px;
     text-align: center;
     padding: 15px 10px;
     border: 1px solid #cce7d0;
-    box-shadow: 20px 20px 34px rgba(0,0,0,0.03);
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
     border: 1px solid #cce7d0;
     margin: 20px 0;
-    }
-#section3 div:hover{
+}
+
+#section3 div:hover {
     box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
 
 }
-#section3 div img{
+
+#section3 div img {
     width: 100%;
     margin-bottom: 10px;
     height: 100px;
@@ -162,86 +207,105 @@ body{
 
 
 }
-#section3 div h5{
+
+#section3 div h5 {
     padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
     color: #088178;
-    background-color: #E3E6F3;}
-#section3{
+    background-color: #E3E6F3;
+}
+
+#section3 {
     display: flex;
     align-items: center;
-    justify-content:center;
-    
+    justify-content: center;
+
     gap: 30px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
-#section3 div:nth-child(2) h5{
+
+#section3 div:nth-child(2) h5 {
     background-color: aqua;
 }
-#section3 div:nth-child(3) h5{
+
+#section3 div:nth-child(3) h5 {
     background-color: rgb(180, 219, 25);
 }
-#section3 div:nth-child(4) h5{
+
+#section3 div:nth-child(4) h5 {
     background-color: rgb(198, 12, 28);
 }
-#section3 div:nth-child(6) h5{
+
+#section3 div:nth-child(6) h5 {
     background-color: rgb(9, 255, 0);
 }
-#product1{
+
+#product1 {
     text-align: center;
 }
-#product1 .pro-container{
-   display: flex;
-   justify-content: space-between;
-   padding-top: 20px;
-   flex-wrap: wrap;
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+    padding-top: 20px;
+    flex-wrap: wrap;
 }
-#product1 .pro{
-    width:23% ;
+
+#product1 .pro {
+    width: 23%;
     min-width: 250px;
-    padding: 10px 12px ;
-    border: 1px solid  #cce7d0;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
     border-radius: 25px;
     cursor: pointer;
-    margin:15px 0 ;
+    margin: 15px 0;
     position: relative;
     position: relative;
     /* transition: 0.02 ease; */
-    box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
 }
 
-#product1 .pro:hover{
-    box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
 
 }
-#product1 .pro img{
+
+#product1 .pro img {
     width: 100%;
-    border-radius:20px ;
+    border-radius: 20px;
 }
-#product1 .pro .des{
+
+#product1 .pro .des {
     text-align: start;
     padding: 10px 0;
 }
+
 #product1 .pro .des span {
     color: aquamarine;
     font-size: 20px;
 }
-#product1 .pro .des h5{
+
+#product1 .pro .des h5 {
     padding-top: 7px;
     color: black;
-    font-size: 14px;}
-#product1 .pro .des i{
-    font-size: 12px;
-    color: rgb(243,181,25);
+    font-size: 14px;
 }
-#product1 .pro .des h4{
+
+#product1 .pro .des i {
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4 {
     padding-top: 7px;
     font-size: 20px;
     font-weight: 700;
     color: #088178;
 }
-#product1 .pro .cart{
+
+#product1 .pro .cart {
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -252,16 +316,17 @@ body{
     color: #088178;
     bottom: 20px;
     right: 10px;
-    border: 1px solid #E3E6F3 ;
+    border: 1px solid #E3E6F3;
 
 }
 
-.section-m1{
+.section-m1 {
     margin: 50px 0;
 }
-#banner{
+
+#banner {
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -271,19 +336,23 @@ body{
     background-size: cover;
     background-position: center;
 }
-#banner h3{
+
+#banner h3 {
     color: #fff;
     font-size: 16px;
 }
-#banner h2{
+
+#banner h2 {
     color: #fff;
     font-size: 30px;
     padding: 10px 0;
 }
-#banner h2 span{
+
+#banner h2 span {
     color: red;
 }
-button.normal{
+
+button.normal {
     font-size: 14px;
     font-weight: 600;
     padding: 15px 30px;
@@ -294,148 +363,176 @@ button.normal{
     outline: none;
     transition: 0.2s;
 }
-#banner button:hover{
+
+#banner button:hover {
     background: #088178;
     color: #fff;
-     
+
 }
-#newsletter{
+
+#newsletter {
     width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-image:url(images/) ;
+    background-image: url(images/);
     background-repeat: no-repeat;
     background-position: 20% 30%;
     background-color: #041e42;
     padding: 30px;
 
 }
-#newsletter h3{
-    font-size:22px ;
+
+#newsletter h3 {
+    font-size: 22px;
     font-weight: 700;
     color: #fff;
-     padding: 10px;
+    padding: 10px;
 }
-#newsletter p{
-    font-size:15px ;
+
+#newsletter p {
+    font-size: 15px;
     font-weight: 600;
     color: #818ea0;
     padding: 10px;
 }
-#newsletter p span{
+
+#newsletter p span {
     color: chocolate;
 }
-#newsletter .form{
+
+#newsletter .form {
     display: flex;
     width: 40%;
-    border-radius:10px ;
+    border-radius: 10px;
 }
-#newsletter input{
+
+#newsletter input {
     height: 3.1rem;
     padding: 0 1.2em;
     font-size: 14px;
-    width:50% ;
+    width: 50%;
     border: 1px solid turquoise;
     border-radius: 4px;
     outline: none;
 }
-footer{
-   display: flex; 
-   flex-wrap: wrap;
-   width: 100%;
-   justify-content: space-between;
-    background:#E3E6F3;
-   
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    background: #E3E6F3;
+
 }
-footer #col{
+
+footer #col {
     margin-top: 30px;
 }
-footer .col{
-    display: flex; 
-    
-    
-   flex-direction: column;
-   align-items:flex-start;
-   }
-footer .logo{
+
+footer .col {
+    display: flex;
+    margin-right: 20px;
+
+    flex-direction: column;
+    align-items: start;
+}
+
+footer .logo {
     margin-bottom: 30px;
 }
-footer h3{
+
+footer h3 {
     font-size: 14px;
     padding-bottom: 20px;
 }
-footer img{
+
+footer img {
     width: 100px;
     margin-bottom: 20px;
 }
-footer p{
+
+footer p {
     font-size: 13px;
     margin: 0 0 8px 0;
 }
-footer a{
+
+footer a {
     font-size: 13px;
     text-decoration: none;
     color: #000;
     margin-bottom: 10px;
 
 }
-footer .follow{
+
+footer .follow {
     margin-top: 20px;
 
 }
-footer .follow i{
-    color: #465b52;
-    padding-right: 4px;
-    cursor: pointer;
-    }
-footer .follow i:hover,footer a:hover{
-    color: #088178;
-} footer .copyriht{
-    width: 100%;
-    text-align: center;
-    color: #1731db;
-   
-#mobil,#close{
+
+.mobil,
+#close {
     display: none;
     align-items: center;
 }
+
+footer .follow i {
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
 }
-@media screen and (max-width:768px ){
-    #navbar{
+
+footer .follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+footer .copyriht {
+    width: 100%;
+    text-align: center;
+    color: #1731db;
+}
+
+@media screen and (max-width:768px) {
+    #navbar {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
-        top: 0  ;
+        top: 0;
         right: -300px;
         height: 100vh;
         width: 300px;
-        background-color:azure;
-        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        background-color: azure;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 80px 0 0 10px;
         transition: 0.5s;
 
     }
-    #navbar.active{
+
+    #navbar.active {
         right: 0px;
     }
-    #navbar li{
+
+    #navbar li {
         margin-bottom: 25px;
 
     }
-    #navbar li a{
+
+    #navbar li a {
         color: black;
     }
-    #mobil i{
+
+    #mobil i {
         color: black;
         font-size: 24px;
         padding-left: 20px;
 
     }
-    #close{
+
+    #close {
         position: absolute;
         text-decoration: none;
         top: 30px;
@@ -444,32 +541,9 @@ footer .follow i:hover,footer a:hover{
         display: flex;
         flex-direction: column;
         font-size: 25px;
-        
-    }
-    .div1,.div3{
-        
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
-        overflow: hidden;
-        
-    }
-    .features .div1 img{
-      
-        width: 100%;
-        height: auto;
-    }
-     
-    .features .div3 img{
-        width: 100%;
-        height: auto;
-        margin: 10px;
-    }
-    #section3{
-        display: none;
+
     }
 
+    
+    
 }
-
