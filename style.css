@@ -247,6 +247,7 @@ button:hover {
 
 #product1 {
     text-align: center;
+   
 }
 
 #product1 .pro-container {
@@ -259,6 +260,7 @@ button:hover {
 
 #product1 .pro {
     width: 23%;
+    
     min-width: 250px;
     padding: 10px 12px;
     border: 1px solid #cce7d0;
@@ -495,7 +497,9 @@ button.normal {
     color: blue;
 }
 
-
+#mobil,#close{
+    display: none;
+}
 @media (max-width: 768px) {
     .section-p1 {
         padding: 40px;
@@ -503,7 +507,7 @@ button.normal {
 }
 
 
-@media screen and (max-width:790px) {
+@media screen and (max-width:799px) {
     .section-p1 {
         padding: 40px;
     }
@@ -520,7 +524,7 @@ button.normal {
         background-color: azure;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 80px 0 0 10px;
-        transition: 0.5s;
+        transition: 0.3s;
 
     }
 
@@ -535,12 +539,12 @@ button.normal {
 
     #navbar li a {
         color: black;
+
     }
-    .mobil {
+    #mobil {
     display: block;
 }
-
-    .mobil i {
+#mobil i {
         color: black;
         font-size: 24px;
         padding-left: 20px;
@@ -548,17 +552,74 @@ button.normal {
     }
 
     #close {
+        display: block; 
         position: absolute;
-        text-decoration: none;
         top: 30px;
         left: 30px;
-        color: black;
-        display: flex;
-        flex-direction: column;
-        font-size: 25px;
+        color: #222;
+        font-size: 24px;
+       
 
     }
 
     
+}
+
+@media (min-width: 800px) {
+    #mobil, #close {
+        display: none;
+    }
+}
+#prodetails {
+    background-color:#E3E6F3;
+    width: 100%;
+    display: flex;
     
+}
+#prodetails .single-image{
+   padding-top: 30px;
+    width: 40%;
+    background-color:#E3E6F3;
+}
+.petite-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.small_img {
+    cursor: pointer;
+    flex-basis: 24%;
+}
+    
+
+.single-image-detail{
+    padding-top: 30px;
+    margin-left: 20px;
+    width: 50%;
+}
+.single-image-detail h4{
+    padding:40px 0 20px 0;
+
+}
+.single-image-detail h2{
+    font-size: 26px;
+}
+.single-image-detail select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+
+}
+.single-image-detail input{
+    width: 50px;
+    height: 30px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+#prodetails .single-image-detai .normal{
+    background-color: #088178;
+    color: white;
+}
+#prodetails .single-image-detai span{
+    line-height: 25px;
 }

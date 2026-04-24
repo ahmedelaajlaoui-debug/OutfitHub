@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OutfitHub</title>
     <!--charge la page chaque tros secondes-->
+    <meta http-equiv="refresh" content="3">
     <!-- relie la  le ficher css-->
     <link rel="stylesheet" href="style.css">
     <!-- permet de utiliser la police Montserrat-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <!-- permet d'ajouter des icones-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+
     <header>
         <!--les barre de navigation-->
         <section id="header">
@@ -40,6 +41,7 @@
                 <i id="bar" class="fas fa-outdent"></i>
             </div>
         </section>
+
     </header>
     <main>
         <section id="hero">
@@ -49,7 +51,7 @@
             <p>Économisez davantage grâce aux coupons et jusqu'à 50% de réduction !</p>
             <button><a href="index2.html">Shop Now</a></button>
         </section>
-        <section id="section3">
+        <section id="section3" >
             <div classe="img1">
                 <img src="images/img1.png" alt="">
                 <h5>Livraison gratuite</h5>
@@ -66,7 +68,10 @@
                 <img src="images/img4.jpeg" alt="">
                 <h5>Promotions</h5>
             </div>
-
+            <div classe="img5">
+                <img src="images/img5.jpeg" alt="">
+                <h5>Vente heureuse </h5>
+            </div>
             <div classe="img6">
                 <img src="images/img6.png" alt="">
                 <h5>24/7</h5>
@@ -76,8 +81,13 @@
         <section id="product1">
             <h1>Produits vedettes</h1>
             <p>Collection été Nouveau design moderne</p>
+            <div class="filter-buttons">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">New Arrival</button>
+        <button class="filter-btn">Sale</button>
+    </div>
             <div class="pro-container">
-                <div class="pro">
+                <div class="pro" onclick="window.location.href='produit.html'"> 
                     <img src="images/image7.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -92,9 +102,9 @@
                         </div>
                         <h4>$120</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="pro">
+                <div class="pro"> 
                     <img src="images/image1.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -109,26 +119,9 @@
                         </div>
                         <h4>$50</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="pro">
-                    <img src="images/image8.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$50</h4>
-                    </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro">
+                <div class="pro"> 
                     <img src="images/image2.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -143,9 +136,9 @@
                         </div>
                         <h4>$54</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="pro">
+                <div class="pro"> 
                     <img src="images/image3.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -160,9 +153,9 @@
                         </div>
                         <h4>$100</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="pro">
+                <div class="pro"> 
                     <img src="images/image4.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -177,9 +170,9 @@
                         </div>
                         <h4>$90</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="pro" id="var">
+                <div class="pro"> 
                     <img src="images/image5.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -194,9 +187,9 @@
                         </div>
                         <h4>$89</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
-                <div class="pro" id="var">
+                <div class="pro"> 
                     <img src="images/image6.jpeg" alt="">
                     <div class="des">
                         <span>OutifitHub</span>
@@ -211,8 +204,9 @@
                         </div>
                         <h4>$68</h4>
                     </div>
-                    <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
+
                 <section id="banner" class="section-m1">
                     <h3>Services de réparation</h3>
                     <h2>Jusqu'à <span>50% de réduction</span> - sur tous les t-shirts </h2>
@@ -374,8 +368,7 @@
                     </div>
                 </section>
                 <footer class="section-p1">
-                    <div class="col">
-                        <h4>Contact</h4>
+                    <div class="col">                        <h4>Contact</h4>
                         <p><strong>Address:</strong> Jean Dupont 14, Rue des Cerisiers, Appartement 3B75015 PARIS FRANCE
                         </p>
                         <p><strong>Phone :</strong> +212 640602332 /0645949394</p>
@@ -401,28 +394,30 @@
                     </div>
                 </footer>
 
+<script>
+const bar = document.getElementById('bar');
+const close = document.getElementById('close');
+const nav = document.getElementById('navbar');
+
+if (bar) {
+    bar.addEventListener('click', () => {
+        nav.classList.add('active');
+    });
+}
+
+if (close) {
+    close.addEventListener('click', () => {
+        nav.classList.remove('active');
+    });
+}
+
+
+
+</script>
 
 
 
 
     </main>
-    <script>
-        const bar = document.getElementById("bar");
-        const close = document.getElementById("close");
-        const nav = document.getElementById("navbar");
-
-        if (bar) {
-            bar.addEventListener('click', () => {
-                nav.classList.add('active');
-            });
-        }
-
-        if (close) {
-            close.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        }
-    </script>
 </body>
-
 </html>
