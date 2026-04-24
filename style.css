@@ -568,58 +568,186 @@ button.normal {
 @media (min-width: 800px) {
     #mobil, #close {
         display: none;
-    }
-}
+    }}
+
+
+
+
+@import url('https://googleapis.com');
+
 #prodetails {
-    background-color:#E3E6F3;
-    width: 100%;
     display: flex;
-    
+    margin-top: 50px;
+    padding: 20px 80px;
+    gap: 40px;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
 }
-#prodetails .single-image{
-   padding-top: 30px;
-    width: 40%;
-    background-color:#E3E6F3;
+
+
+#prodetails .single-image {
+    width: 45%;
 }
+
+#image_principal {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
 .petite-images {
     display: flex;
     justify-content: space-between;
-    gap: 5px;
+    margin-top: 15px;
+    gap: 10px;
 }
+
 .small_img {
-    cursor: pointer;
     flex-basis: 24%;
+    cursor: pointer;
 }
-    
 
-.single-image-detail{
-    padding-top: 30px;
-    margin-left: 20px;
+.small_img img {
+    border-radius: 8px;
+    transition: 0.2s;
+    opacity: 0.8;
+}
+
+.small_img img:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    border: 2px solid #088178; 
+}
+
+
+#prodetails .single-image-detail {
     width: 50%;
+    padding-top: 30px;
 }
-.single-image-detail h4{
-    padding:40px 0 20px 0;
 
+#prodetails .single-image-detail h6 {
+    font-size: 14px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.single-image-detail h2{
+
+#prodetails .single-image-detail h4 {
+    padding: 15px 0 5px 0;
     font-size: 26px;
+    font-weight: 700;
 }
-.single-image-detail select{
-    display: block;
-    padding: 5px 10px;
-    margin-bottom: 10px;
 
+#prodetails .single-image-detail h2 {
+    font-size: 32px;
+    color: #088178;
+    margin-bottom: 20px;
 }
-.single-image-detail input{
-    width: 50px;
-    height: 30px;
+
+
+#prodetails .single-image-detail select {
+    display: block;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    outline: none;
+}
+
+#prodetails .single-image-detail input {
+    width: 60px;
+    height: 45px;
     padding-left: 10px;
+    font-size: 16px;
     margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
 }
-#prodetails .single-image-detai .normal{
-    background-color: #088178;
+
+
+#prodetails .single-image-detail button {
+    background: #088178;
     color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-#prodetails .single-image-detai span{
-    line-height: 25px;
+
+#prodetails .single-image-detail button:hover {
+    background: #06655e;
+    box-shadow: 0 5px 15px rgba(8, 129, 120, 0.3);
+}
+
+
+#prodetails .single-image-detail span {
+    line-height: 1.8;
+    color: #555;
+    font-size: 15px;
+}
+
+#prodetails .single-image-detail h4:last-of-type {
+    margin-top: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+@media (max-width: 799px) {
+    #prodetails {
+        flex-direction: column;
+        padding: 10px; 
+        margin-top: 10px;
+        gap: 25px;
+    }
+
+    #prodetails .single-image {
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        border-radius: 20px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    }
+
+    #image_principal {
+        border-radius: 15px;
+    }
+
+    .petite-images {
+        margin-top: 10px;
+        gap: 8px;
+    }
+
+    #prodetails .single-image-detail {
+        width: 100%;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 30px 30px 0 0; 
+        box-shadow: 0 -10px 20px rgba(0,0,0,0.03);
+    }
+
+    
+    #prodetails .single-image-detail h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    #prodetails .single-image-detail select, 
+    #prodetails .single-image-detail input, 
+    #prodetails .single-image-detail button {
+        width: 80%; 
+        margin-bottom: 10px;
+        height: 50px;
+    }
+
+    #prodetails .single-image-detail button {
+        font-size: 18px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #088178, #06655e); 
+    }
 }
