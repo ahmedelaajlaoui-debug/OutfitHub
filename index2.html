@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OutifitHub Maroc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         :root {
             --primary: #26a69a;
@@ -41,7 +45,8 @@
             transition: 0.3s;
         }
 
-        .filter-btn.active, .filter-btn:hover {
+        .filter-btn.active,
+        .filter-btn:hover {
             background-color: var(--primary);
             color: #fff;
         }
@@ -58,7 +63,7 @@
             background: #fff;
             border-radius: 15px;
             padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             transition: 0.3s ease;
@@ -80,94 +85,174 @@
             padding: 10px;
         }
 
-        .brand-label { color: var(--primary); font-size: 12px; font-weight: bold; }
-        .item-title { color: var(--dark); font-size: 15px; font-weight: 600; margin: 5px 0; height: 40px; }
-        .rating { color: #fdcb6e; margin-bottom: 10px; font-size: 12px; }
-        .price-box { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-        .price-tag { color: var(--primary); font-size: 1.2rem; font-weight: 800; }
-        .cart-icon { width: 35px; height: 35px; border-radius: 50%; background: #f0fdfa; display: flex; align-items: center; justify-content: center; }
+        .brand-label {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .item-title {
+            color: var(--dark);
+            font-size: 15px;
+            font-weight: 600;
+            margin: 5px 0;
+            height: 40px;
+        }
+
+        .rating {
+            color: #fdcb6e;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price-tag {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .cart-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f0fdfa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
+
 <body>
+    <header>
+        <!--les barre de navigation-->
+        <section id="header">
+            <!--logo dela la page-->
+            <a href="#">
+                <img src="images/logo.jpeg" class="logo" alt="logo">
+            </a>
+            <!-- les page du site  -->
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">Boutique</a></li>
+                <li><a href="produit.html">Produit</a></li>
+                <li><a href="club.html">Club</a></li>
+                <li><a href="inscription.html">Contact</a></li>
+                <!-- pour afficher icône -->
+                <li><a href="index2.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 
-<div class="header-section">
-    <h1>OutifitHub Maroc</h1>
-    <div class="filter-buttons">
-        <button class="filter-btn active" onclick="filterSelection('all')">Tous</button>
-        <button class="filter-btn" onclick="filterSelection('homme')">Homme</button>
-        <button class="filter-btn" onclick="filterSelection('femme')">Femme</button>
-        
+            </ul>
+            <div id="mobil" class="mobil">
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
 
+    </header>
+
+    <div class="header-section">
+        <h1>OutifitHub Maroc</h1>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterSelection('all')">Tous</button>
+            <button class="filter-btn" onclick="filterSelection('homme')">Homme</button>
+            <button class="filter-btn" onclick="filterSelection('femme')">Femme</button>
+
+
+        </div>
     </div>
-</div>
 
-<div class="grid-container" id="productGrid"></div>
+    <div class="grid-container" id="productGrid"></div>
 
-<script>
-    const products = [
-        { cat: 'homme', name: "Costume Slim Fit" }, { cat: 'homme', name: "Jean Brut Indigo" },
-        { cat: 'homme', name: "Chemise Oxford" }, { cat: 'homme', name: "Sweat à capuche Sport" },
-        { cat: 'homme', name: "Pantalon Cargo Militaire" }, { cat: 'homme', name: "Blazer Casual Gris" },
-        { cat: 'homme', name: "Polo en Coton Piqué" }, { cat: 'homme', name: "Veste en Jean Homme" },
-        { cat: 'homme', name: "Short de Bain Tropique" }, { cat: 'homme', name: "T-shirt Oversize Street" },
-        { cat: 'homme', name: "Pull Col Camionneur" }, { cat: 'homme', name: "Veste Cuir Perfecto" },
-        { cat: 'homme', name: "Pantalon Chino Beige" }, { cat: 'homme', name: "Veste Polaire sans manche" },
-        { cat: 'homme', name: "Survêtement de Football" }, { cat: 'homme', name: "Chemise à Carreaux Bûcheron" },
-        { cat: 'homme', name: "Manteau Long en Laine" }, { cat: 'homme', name: "Débardeur Musculation" },
-        { cat: 'homme', name: "Short en Molleton" }, { cat: 'homme', name: "Bomber MA-1 Kaki" },
-        { cat: 'homme', name: "Chemisette d'été" }, { cat: 'homme', name: "Cardigan à boutons" },
-        { cat: 'homme', name: "Pantalon de Jogging" }, { cat: 'homme', name: "Parka d'hiver" },
-        { cat: 'homme', name: "T-shirt Col Tunisien" },
+    <script>
 
-        { cat: 'femme', name: "Robe de Soirée Satin" }, { cat: 'femme', name: "Jupe Plissée Pastel" },
-        { cat: 'femme', name: "Top en Dentelle Blanc" }, { cat: 'femme', name: "Jean Mom High Waist" },
-        { cat: 'femme', name: "Blouse Fleurie Bohème" }, { cat: 'femme', name: "Combinaison Pantalon" },
-        { cat: 'femme', name: "Veste Tailleur Cintrée" }, { cat: 'femme', name: "Robe d'été Légère" },
-        { cat: 'femme', name: "Legging de Yoga Pro" }, { cat: 'femme', name: "Jupe en Cuir Noir" },
-        { cat: 'femme', name: "Cardigan Long en Maille" }, { cat: 'femme', name: "Maillot de Bain 1 pièce" },
-        { cat: 'femme', name: "Trench Coat Classique" }, { cat: 'femme', name: "Pull Col Roulé Cachemire" },
-        { cat: 'femme', name: "Short en Jean Taille Haute" }, { cat: 'femme', name: "Robe Chemise Rayée" },
-        { cat: 'femme', name: "Top Crop à Volants" }, { cat: 'femme', name: "Pantalon Palazzo Large" },
-        { cat: 'femme', name: "Veste Teddy Rose" }, { cat: 'femme', name: "Pyjama en Satin Luxe" },
-        { cat: 'femme', name: "Kimono Imprimé" }, { cat: 'femme', name: "Salopette en Jean Femme" },
-        { cat: 'femme', name: "Jupe Crayon Bureau" }, { cat: 'femme', name: "Body Manches Dentelle" },
-        { cat: 'femme', name: "Veste Fausse Fourrure" }
-    ];
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
 
-    function displayProducts(category) {
-        const grid = document.getElementById('productGrid');
-        grid.innerHTML = '';
-        const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
-
-        filtered.forEach((p) => {
-            const price = Math.floor(Math.random() * (750 - 150) + 150);
-            grid.innerHTML += `
-                <div class="product-card">
-                    <div class="image-slot">[Photo ${p.cat.toUpperCase()} : ${p.name}]</div>
-                    <span class="brand-label">OutifitHub</span>
-                    <div class="item-title">${p.name}</div>
-                    <div class="rating">★★★★★</div>
-                    <div class="price-box">
-                        <span class="price-tag">${price} DH</span>
-                        <div class="cart-icon">🛒</div>
-                    </div>
-                </div>
-            `;
-        });
-    }
-
-    function filterSelection(category) {
-        displayProducts(category);
-        let btns = document.getElementsByClassName("filter-btn");
-        for (let i = 0; i < btns.length; i++) {
-            btns[i].classList.remove("active");
-            if (btns[i].innerText.toLowerCase() === category || (category === 'all' && btns[i].innerText === 'Tous')) {
-                btns[i].classList.add("active");
-            }
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+            });
         }
-    }
 
-    displayProducts('all');
-</script>
+        if (close) {
+            close.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        }
+
+
+
+
+        const products = [
+            { cat: 'homme', name: "Costume Slim Fit" }, { cat: 'homme', name: "Jean Brut Indigo" },
+            { cat: 'homme', name: "Chemise Oxford" }, { cat: 'homme', name: "Sweat à capuche Sport" },
+            { cat: 'homme', name: "Pantalon Cargo Militaire" }, { cat: 'homme', name: "Blazer Casual Gris" },
+            { cat: 'homme', name: "Polo en Coton Piqué" }, { cat: 'homme', name: "Veste en Jean Homme" },
+            { cat: 'homme', name: "Short de Bain Tropique" }, { cat: 'homme', name: "T-shirt Oversize Street" },
+            { cat: 'homme', name: "Pull Col Camionneur" }, { cat: 'homme', name: "Veste Cuir Perfecto" },
+            { cat: 'homme', name: "Pantalon Chino Beige" }, { cat: 'homme', name: "Veste Polaire sans manche" },
+            { cat: 'homme', name: "Survêtement de Football" }, { cat: 'homme', name: "Chemise à Carreaux Bûcheron" },
+            { cat: 'homme', name: "Manteau Long en Laine" }, { cat: 'homme', name: "Débardeur Musculation" },
+            { cat: 'homme', name: "Short en Molleton" }, { cat: 'homme', name: "Bomber MA-1 Kaki" },
+            { cat: 'homme', name: "Chemisette d'été" }, { cat: 'homme', name: "Cardigan à boutons" },
+            { cat: 'homme', name: "Pantalon de Jogging" }, { cat: 'homme', name: "Parka d'hiver" },
+            { cat: 'homme', name: "T-shirt Col Tunisien" },
+
+            { cat: 'femme', name: "Robe de Soirée Satin" }, { cat: 'femme', name: "Jupe Plissée Pastel" },
+            { cat: 'femme', name: "Top en Dentelle Blanc" }, { cat: 'femme', name: "Jean Mom High Waist" },
+            { cat: 'femme', name: "Blouse Fleurie Bohème" }, { cat: 'femme', name: "Combinaison Pantalon" },
+            { cat: 'femme', name: "Veste Tailleur Cintrée" }, { cat: 'femme', name: "Robe d'été Légère" },
+            { cat: 'femme', name: "Legging de Yoga Pro" }, { cat: 'femme', name: "Jupe en Cuir Noir" },
+            { cat: 'femme', name: "Cardigan Long en Maille" }, { cat: 'femme', name: "Maillot de Bain 1 pièce" },
+            { cat: 'femme', name: "Trench Coat Classique" }, { cat: 'femme', name: "Pull Col Roulé Cachemire" },
+            { cat: 'femme', name: "Short en Jean Taille Haute" }, { cat: 'femme', name: "Robe Chemise Rayée" },
+            { cat: 'femme', name: "Top Crop à Volants" }, { cat: 'femme', name: "Pantalon Palazzo Large" },
+            { cat: 'femme', name: "Veste Teddy Rose" }, { cat: 'femme', name: "Pyjama en Satin Luxe" },
+            { cat: 'femme', name: "Kimono Imprimé" }, { cat: 'femme', name: "Salopette en Jean Femme" },
+            { cat: 'femme', name: "Jupe Crayon Bureau" }, { cat: 'femme', name: "Body Manches Dentelle" },
+            { cat: 'femme', name: "Veste Fausse Fourrure" }
+        ];
+
+        function displayProducts(category) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
+
+            filtered.forEach((p) => {
+                const price = Math.floor(Math.random() * (750 - 150) + 150);
+                grid.innerHTML += `
+    <div class="product-card">
+        <div class="image-slot">[Photo ${p.cat.toUpperCase()} : ${p.name}]</div>
+        <span class="brand-label">OutifitHub</span>
+        <div class="item-title">${p.name}</div>
+        <div class="rating">★★★★★</div>
+        <div class="price-box">
+            <span class="price-tag">${price} DH</span>
+            <div class="cart-icon">🛒</div>
+        </div>
+    </div>
+    `;
+            });
+        }
+
+        function filterSelection(category) {
+            displayProducts(category);
+            let btns = document.getElementsByClassName("filter-btn");
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active"); if
+                    (btns[i].innerText.toLowerCase() === category || (category === 'all' && btns[i].innerText === 'Tous')) {
+                    btns[i].classList.add("active");
+                }
+            }
+        } displayProducts('all'); </script>
 </body>
+
 </html>

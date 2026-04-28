@@ -1,46 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>Club VIP - OutfitHub</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="body-inscription">
-        <section id="header">
-            <a href="index.html" class="logo">OutfitHub</a>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index2.html">Boutique</a></li>
-                <li><a href="club.html" class="active">Club VIP</a></li>
-                <li><a href="page4.html">propos</a></li>
-                <li><a href="inscription.html" class="active">Contact</a></li>
-            </ul>
-        </section>
-        
-        <section class="section-club">
-            <div class="card-club">
-                <h2>Espace Membres VIP</h2>
-                <p>Entrez vos informations pour vérifier votre éligibilité.</p>
 
-                <table class="table-club">
-                    <tr>
-                        <td><label>Nom complet:</label></td>
-                        <td><input type="text" id="nom"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Age:</label></td>
-                        <td><input type="number" id="age"></td>
-                    </tr>
-                </table>
-                
-                <button onclick="verifierEligibilite()" class="btn-red">Vérifier</button>
+<head>
+    <meta charset="UTF-8">
+    <title>Club VIP - OutfitHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-                <div id="resultat_box" class="result_box">
-                    <p id="msg_final"></p>
-                </div>
-            </div>
-        </section>
+</head>
+<link rel="stylesheet" href="style.css">
+<header>
+    <!--les barre de navigation-->
+    <section id="header">
+        <!--logo dela la page-->
+        <a href="#">
+            <img src="images/logo.jpeg" class="logo" alt="logo">
+        </a>
+        <!-- les page du site  -->
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Boutique</a></li>
+            <li><a href="produit.html">Produit</a></li>
+            <li><a href="club.html">Club</a></li>
+            <li><a href="inscription.html">Contact</a></li>
+            <!-- pour afficher icône -->
+            <li><a href="index2.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 
-        <script src="script-club.js"></script>
-    </body>
+        </ul>
+        <div id="mobil" class="mobil">
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+</header>
+
+<section class="section-club">
+    <div class="card-club">
+        <h2>Espace Membres VIP</h2>
+        <p>Entrez vos informations pour vérifier votre éligibilité.</p>
+
+        <table class="table-club">
+            <tr>
+                <td><label>Nom complet:</label></td>
+                <td><input type="text" id="nom"></td>
+            </tr>
+            <tr>
+                <td><label>Age:</label></td>
+                <td><input type="number" id="age"></td>
+            </tr>
+        </table>
+
+        <button onclick="verifierEligibilite()" class="btn-red">Vérifier</button>
+
+        <div id="resultat_box" class="result_box">
+            <p id="msg_final"></p>
+        </div>
+    </div>
+</section>
+
+<script src="script-club.js"></script>
+
+</body>
+
 </html>
