@@ -336,7 +336,7 @@ button:hover {
     background-position: center;
     background-attachment: fixed;
 }
-/*Conteneur principal utilisant Flexbox pour centrer  le contenu vertivcalement et horizontalement*/
+/*Conteneur principal utilisant Flexbox pour centrer le contenu vertivcalement et horizontalement*/
 .container-flex{
     display: flex;
     justify-content: center;
@@ -811,4 +811,44 @@ button.normal {
         background: linear-gradient(135deg, #088178, #06655e); 
     }
 }
+/*--Ajout Navigation par Sanae---*/
+/*Style de conteneur principal de navigation*/
+#header{
+    display:flex;/*Aligner le logo et le menu sur la meme ligne*/
+    justify-content: space-between;/*Espacement entre le logo et les liens*/
+    align-items: center;/*Centreage vertical des elements*/
+    padding:15px 8%;/*Marge interne*/
+    background: rgba(0,0,0,0.7);/*Fond noir semi-transparent*/
+    position:absolute;/*Fixer la barre en haut de la page d'inscription*/
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;/*Assure que la barre reste au-dessus des autres elements*/
+}
 
+/*Style de la liste des liens de navigation*/
+#navbar{
+    list-style:none;/*Supprimer les puces par defauts*/
+    display:flex;/*Affichage horizontal di menu*/
+    gap:25px;/*Espace entre chaque lien du menu*/
+}
+/*Style des liens*/
+#navbar a{
+    text-decoration: none;/*Supprime les soulignements des liens*/
+    color:white;
+    font-size:14px;
+    font-weight: bold;
+    transition: 0.3s;/*Animation*/
+}
+/*  Etat au survol et indication de la page active(Contact)*/
+#navbar a:hover, 
+#navbar a.active{
+    color:#e60023;
+}
+/*Style du logo dans la navigation*/
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight: bold;
+    text-decoration:none;
+}

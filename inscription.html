@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
-    <title>Inscription-Boutique Vêtements</title>
+    <title>Contact-OutfitHub</title>
     <link rel="stylesheet" href="style.css"
 </head>
 <body class="body-inscription">
 
+     <section id="header">
+            <a href="#"><img src="images/logo.jpeg" class="logo" alt="logo"></a>
+            <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">Boutique</a></li>
+                <li><a href="page4.html">page3</a></li>
+                <li><a href="page4.html">propos</a></li>
+                <li><a href="inscription.html" class="active">Contact</a></li>
+                <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+
+            </ul>
+            </div>
+        </section>
+
     <section class="container-flex">
         <form action="#" method="post" class="form-card">
             <h2>OutfitHub</h2>
-            <p style="font-size:14px;margin-bottom:10px">Inscrivez-vous pour voir plus d'idées</p>
+            <p style="font-size:14px;margin-bottom:10px">Contactez-nous ou crée un compte</p>
 
             <label>Nom complet</label>
             <input type="text" name="nom" placeholder="Votre nom complet" required>
@@ -29,10 +45,10 @@
                 <input type="radio" name="genre" value="H" id="h"> <label for="h">Homme</label>
             </div>
 
-            <input type="submit" value="Continuer" class="btn-red">
+            <input type="submit" value="Envoyer" class="btn-red">
 
             <p class="terms-text">
-                En continuant,vous acceptez les<b>Conditions d'utilisation de notre boutique et confirmez que vous avez lu notre<b>Politiquede confidentialités</b>
+                En continuant,vous acceptez les<b>Conditions d'utilisation</b> de notre boutique.
             </p>
 
             <hr>
