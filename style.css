@@ -326,6 +326,62 @@ button:hover {
 
 }
 
+/*---Partie Inscription(Sanae)---*/
+.body-inscription{
+    margin:0;
+    background-image: url('images/hero.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container-flex{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.form-card{
+    display:flex;
+    flex-direction:column;
+    width:380px;
+    padding:30px;
+    background: white;
+    border-radius:30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding:12px;
+    margin-top:5px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    outline:none;
+}
+
+
+input:focus:invalid{ border-color:#e60023; }
+input:focus:valid{ border-color:#088178; }
+
+.btn-red {
+    background-color: #e60023;
+    color:white;
+    padding:14px;
+    border:none;
+    border-radius:25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top:15px;
+}
+.instructions { font-size:11px; color:#666; text-align:left; margin-top:5px;}
+.genre-group { margin:15px 0; font-size: 14px; text-align:left; }
+.terms-text{ font-size:11px;color: #767676;margin-top:20px;}
+hr { border:0; border-top:1px solid #eee ; margin:20px 0;}
+.login-link{ font-size:13px;font-weight: bold;}
+
+
 .section-m1 {
     margin: 50px 0;
 }
@@ -751,3 +807,4 @@ button.normal {
         background: linear-gradient(135deg, #088178, #06655e); 
     }
 }
+
