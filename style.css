@@ -327,21 +327,24 @@ button:hover {
 }
 
 /*---Partie Inscription(Sanae)---*/
+/*Style pour le corps de la page d'inscription*/
 .body-inscription{
     margin:0;
+    /*Image de fond qui couvre toute la surface et reste fixe*/
     background-image: url('images/hero.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
+/*Conteneur principal utilisant Flexbox pour centrer  le contenu vertivcalement et horizontalement*/
 .container-flex{
     display: flex;
     justify-content: center;
     align-items:center;
-    min-height: 100vh;
-    background-color: rgba(0,0,0,0.3);
+    min-height: 100vh;/*Prend toute la hauteur de l'ecran*/
+    background-color: rgba(0,0,0,0.3);/*Superposition sombre pour améliorer la lisibité*/
 }
-
+/*Style de la carte contenant le formulaire*/
 .form-card{
     display:flex;
     flex-direction:column;
@@ -349,22 +352,22 @@ button:hover {
     padding:30px;
     background: white;
     border-radius:30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);/*Ombre portée pour un effet de relief*/
     text-align:center;
 }
-
+/*Style commun pour les champs de saisie(texte,Email,Mot de passe)*/
 input[type="text"], input[type="email"], input[type="password"] {
     padding:12px;
     margin-top:5px;
     border:2px solid #ddd;
     border-radius:10px;
-    outline:none;
+    outline:none;/*Supprime la bordure par defaut lors de clic*/
 }
 
-
-input:focus:invalid{ border-color:#e60023; }
-input:focus:valid{ border-color:#088178; }
-
+/*Indicateur visuels de validation lors de la saisie*/
+input:focus:invalid{ border-color:#e60023; }/*Bordure rouge si la donnée est invalide*/
+input:focus:valid{ border-color:#088178; }/*Bordure verte si la donnée est valide*/
+/*Style de bouton d'action principale(Rouge)*/
 .btn-red {
     background-color: #e60023;
     color:white;
@@ -375,6 +378,7 @@ input:focus:valid{ border-color:#088178; }
     cursor: pointer;
     margin-top:15px;
 }
+/*Style pour les petits textes informatifs et les liens*/
 .instructions { font-size:11px; color:#666; text-align:left; margin-top:5px;}
 .genre-group { margin:15px 0; font-size: 14px; text-align:left; }
 .terms-text{ font-size:11px;color: #767676;margin-top:20px;}
