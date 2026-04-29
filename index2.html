@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OutifitHub Maroc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         :root {
             --primary: #26a69a;
@@ -12,6 +16,7 @@
             --gray-light: #f1f2f6;
             --bg: #f5f6fa;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
@@ -27,7 +32,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -113,7 +118,8 @@
             transition: all 0.3s ease;
         }
 
-        .filter-btn.active, .filter-btn:hover {
+        .filter-btn.active,
+        .filter-btn:hover {
             background-color: var(--primary);
             color: #fff;
         }
@@ -130,7 +136,7 @@
             background: #fff;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease;
@@ -160,51 +166,51 @@
             flex-grow: 1;
         }
 
-        .brand-label { 
-            color: var(--primary); 
-            font-size: 11px; 
-            font-weight: 700; 
+        .brand-label {
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 5px;
         }
 
-        .item-title { 
-            color: var(--dark); 
-            font-size: 15px; 
-            font-weight: 600; 
-            margin: 0 0 10px 0; 
+        .item-title {
+            color: var(--dark);
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
             height: 42px;
             overflow: hidden;
         }
 
-        .price-box { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+        .price-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: auto;
             padding-top: 15px;
             border-top: 1px solid var(--gray-light);
         }
 
-        .price-tag { 
-            color: var(--dark); 
-            font-size: 1.2rem; 
-            font-weight: 800; 
+        .price-tag {
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 800;
         }
 
-        .cart-icon { 
-            width: 38px; 
-            height: 38px; 
-            border-radius: 50%; 
-            background: #e0f2f1; 
+        .cart-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e0f2f1;
             color: var(--primary);
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         #backToTop {
-            display: none; 
+            display: none;
             position: fixed;
             bottom: 30px;
             right: 30px;
@@ -219,7 +225,7 @@
             font-size: 20px;
             width: 50px;
             height: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -229,79 +235,120 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .navbar { padding: 15px 20px; }
-            #backToTop { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            .nav-links {
+                display: none;
+            }
+
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            #backToTop {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<nav class="navbar">
-    <a href="#" class="logo">OutifitHub</a>
-    
-    <ul class="nav-links">
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Homme</a></li>
-        <li><a href="#">Femme</a></li>
-        <li><a href="#">Collections</a></li>
-    </ul>
+    <header>
+        <!--les barre de navigation-->
+        <section id="header">
+            <!--logo dela la page-->
+            <a href="#">
+                <img src="images/logo.jpeg" class="logo" alt="logo">
+            </a>
+            <!-- les page du site  -->
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">Boutique</a></li>
+                <li><a href="produit.html">Produit</a></li>
+                <li><a href="club.html">Club</a></li>
+                <li><a href="inscription.html">Contact</a></li>
+                <!-- pour afficher icône -->
+                <li><a href="index2.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 
-    <div class="nav-icons">
-        <button class="icon-btn">🔍</button>
-        <button class="icon-btn">👤</button>
-        <button class="icon-btn">🛒</button>
-    </div>
-</nav>
+            </ul>
+            <div id="mobil" class="mobil">
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
 
-<div class="main-content">
-    <div class="header-section">
-        <h1>Nos Produits</h1>
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterSelection('all')">Tous</button>
-            <button class="filter-btn" onclick="filterSelection('homme')">Homme</button>
-            <button class="filter-btn" onclick="filterSelection('femme')">Femme</button>
+    </header>
+
+    <div class="main-content">
+        <div class="header-section">
+            <h1>Nos Produits</h1>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterSelection('all')">Tous</button>
+                <button class="filter-btn" onclick="filterSelection('homme')">Homme</button>
+                <button class="filter-btn" onclick="filterSelection('femme')">Femme</button>
+            </div>
         </div>
+
+        <div class="grid-container" id="productGrid"></div>
     </div>
 
-    <div class="grid-container" id="productGrid"></div>
-</div>
+    <button id="backToTop" title="Retour en haut">↑</button>
 
-<button id="backToTop" title="Retour en haut">↑</button>
+    <script>
 
-<script>
-    const products = [
-        { cat: 'homme', name: "Costume Slim Fit Business", img: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=500&q=80" }, 
-        { cat: 'homme', name: "Veste en Cuir Noir", img: "https://images.unsplash.com/photo-1520975954732-3cdd221648b4?w=500&q=80" },
-        { cat: 'homme', name: "Chemise Blanche Classique", img: "https://images.unsplash.com/photo-1598033129183-c4f50c7176c8?w=500&q=80" }, 
-        { cat: 'homme', name: "Sweat à Capuche Urban", img: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80" },
-        { cat: 'homme', name: "Polo Bleu Coton", img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500&q=80" },
-        { cat: 'homme', name: "Jean Slim Indigo", img: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&q=80" }, 
-        { cat: 'homme', name: "Blazer Gris Casual", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" },
-        { cat: 'homme', name: "Manteau d'Hiver Long", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&q=80" },
-        { cat: 'homme', name: "T-shirt Oversize Street", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&q=80" }, 
-        { cat: 'homme', name: "Pantalon Chino Beige", img: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500&q=80" },
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
 
-        { cat: 'femme', name: "Robe de Soirée Elégante", img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&q=80" }, 
-        { cat: 'femme', name: "Veste Tailleur Rose", img: "https://images.unsplash.com/photo-1548624149-f7b3166883b8?w=500&q=80" },
-        { cat: 'femme', name: "Top en Dentelle Blanc", img: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&q=80" }, 
-        { cat: 'femme', name: "Jean Mom High Waist", img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500&q=80" },
-        { cat: 'femme', name: "Robe d'Été Fleurie", img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80" }, 
-        { cat: 'femme', name: "Combinaison Chic Noire", img: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=500&q=80" },
-        { cat: 'femme', name: "Pull en Maille Doux", img: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&q=80" }, 
-        { cat: 'femme', name: "Trench Coat Beige", img: "https://images.unsplash.com/photo-1591032890632-446777c5c74f?w=500&q=80" },
-        { cat: 'femme', name: "Jupe Plissée Satin", img: "https://images.unsplash.com/photo-1583496661160-fb41a4a0aaa6?w=500&q=80" }, 
-        { cat: 'femme', name: "Blouse en Soie Bleue", img: "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=500&q=80" }
-    ];
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+            });
+        }
 
-    function displayProducts(category) {
-        const grid = document.getElementById('productGrid');
-        grid.innerHTML = '';
-        const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
+        if (close) {
+            close.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        }
 
-        filtered.forEach((p) => {
-            const price = Math.floor(Math.random() * (750 - 150) + 150);
-            grid.innerHTML += `
+
+
+
+        const products = [
+            { cat: 'homme', name: "Costume Slim Fit Business", img: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=500&q=80" },
+            { cat: 'homme', name: "Veste en Cuir Noir", img: "https://images.unsplash.com/photo-1520975954732-3cdd221648b4?w=500&q=80" },
+            { cat: 'homme', name: "Chemise Blanche Classique", img: "https://images.unsplash.com/photo-1598033129183-c4f50c7176c8?w=500&q=80" },
+            { cat: 'homme', name: "Sweat à Capuche Urban", img: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80" },
+            { cat: 'homme', name: "Polo Bleu Coton", img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500&q=80" },
+            { cat: 'homme', name: "Jean Slim Indigo", img: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&q=80" },
+            { cat: 'homme', name: "Blazer Gris Casual", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" },
+            { cat: 'homme', name: "Manteau d'Hiver Long", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&q=80" },
+            { cat: 'homme', name: "T-shirt Oversize Street", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&q=80" },
+            { cat: 'homme', name: "Pantalon Chino Beige", img: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500&q=80" },
+
+            { cat: 'femme', name: "Robe de Soirée Elégante", img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&q=80" },
+            { cat: 'femme', name: "Veste Tailleur Rose", img: "https://images.unsplash.com/photo-1548624149-f7b3166883b8?w=500&q=80" },
+            { cat: 'femme', name: "Top en Dentelle Blanc", img: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&q=80" },
+            { cat: 'femme', name: "Jean Mom High Waist", img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500&q=80" },
+            { cat: 'femme', name: "Robe d'Été Fleurie", img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80" },
+            { cat: 'femme', name: "Combinaison Chic Noire", img: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=500&q=80" },
+            { cat: 'femme', name: "Pull en Maille Doux", img: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&q=80" },
+            { cat: 'femme', name: "Trench Coat Beige", img: "https://images.unsplash.com/photo-1591032890632-446777c5c74f?w=500&q=80" },
+            { cat: 'femme', name: "Jupe Plissée Satin", img: "https://images.unsplash.com/photo-1583496661160-fb41a4a0aaa6?w=500&q=80" },
+            { cat: 'femme', name: "Blouse en Soie Bleue", img: "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=500&q=80" }
+        ];
+
+        function displayProducts(category) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
+
+            filtered.forEach((p) => {
+                const price = Math.floor(Math.random() * (750 - 150) + 150);
+                grid.innerHTML += `
                 <div class="product-card">
                     <div class="image-container">
                         <img src="${p.img}" alt="${p.name}" class="product-image" onerror="this.src='https://via.placeholder.com/400x500?text=Mode+Hub'">
@@ -316,37 +363,38 @@
                     </div>
                 </div>
             `;
-        });
-    }
+            });
+        }
 
-    function filterSelection(category) {
-        displayProducts(category);
-        let btns = document.getElementsByClassName("filter-btn");
-        for (let i = 0; i < btns.length; i++) {
-            btns[i].classList.remove("active");
-            if (category === 'all' && btns[i].innerText === 'Tous') {
-                btns[i].classList.add("active");
-            } else if (btns[i].innerText.toLowerCase() === category) {
-                btns[i].classList.add("active");
+        function filterSelection(category) {
+            displayProducts(category);
+            let btns = document.getElementsByClassName("filter-btn");
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+                if (category === 'all' && btns[i].innerText === 'Tous') {
+                    btns[i].classList.add("active");
+                } else if (btns[i].innerText.toLowerCase() === category) {
+                    btns[i].classList.add("active");
+                }
             }
         }
-    }
 
-    const backBtn = document.getElementById("backToTop");
+        const backBtn = document.getElementById("backToTop");
 
-    window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backBtn.style.display = "block";
-        } else {
-            backBtn.style.display = "none";
-        }
-    };
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backBtn.style.display = "block";
+            } else {
+                backBtn.style.display = "none";
+            }
+        };
 
-    backBtn.onclick = function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+        backBtn.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
 
-    displayProducts('all');
-</script>
+        displayProducts('all');
+    </script>
 </body>
+
 </html>
