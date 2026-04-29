@@ -1,31 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OutifitHub Maroc</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <style>
         :root {
             --primary: #26a69a;
             --dark: #2d3436;
             --gray: #b2bec3;
+            --gray-light: #f1f2f6;
             --bg: #f5f6fa;
         }
-
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            color: var(--dark);
+        }
+
+        /* --- Barre de Navigation --- */
+        .navbar {
+            background-color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--dark);
+            transition: 0.3s;
+        }
+
+        .icon-btn:hover {
+            color: var(--primary);
+        }
+
+        /* --- Content Layout --- */
+        .main-content {
+            padding: 40px 20px;
         }
 
         .header-section {
             text-align: center;
             margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--dark);
+            font-weight: 800;
+            margin-bottom: 25px;
         }
 
         .filter-buttons {
@@ -36,17 +104,16 @@
             background-color: #fff;
             border: 2px solid var(--primary);
             color: var(--primary);
-            padding: 10px 25px;
+            padding: 10px 28px;
             font-size: 16px;
             font-weight: bold;
             border-radius: 25px;
             cursor: pointer;
-            margin: 0 10px;
-            transition: 0.3s;
+            margin: 0 8px;
+            transition: all 0.3s ease;
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
+        .filter-btn.active, .filter-btn:hover {
             background-color: var(--primary);
             color: #fff;
         }
@@ -55,204 +122,231 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
             background: #fff;
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
-            transition: 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
-        .image-slot {
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container {
             width: 100%;
-            height: 300px;
-            background-color: #fdfdfd;
-            border: 2px dashed var(--gray);
-            border-radius: 12px;
-            margin-bottom: 12px;
+            height: 350px;
+            background-color: #eee;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-details {
+            padding: 18px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
-            font-size: 12px;
-            text-align: center;
-            padding: 10px;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
-        .brand-label {
-            color: var(--primary);
-            font-size: 12px;
-            font-weight: bold;
+        .brand-label { 
+            color: var(--primary); 
+            font-size: 11px; 
+            font-weight: 700; 
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
 
-        .item-title {
-            color: var(--dark);
-            font-size: 15px;
-            font-weight: 600;
-            margin: 5px 0;
-            height: 40px;
+        .item-title { 
+            color: var(--dark); 
+            font-size: 15px; 
+            font-weight: 600; 
+            margin: 0 0 10px 0; 
+            height: 42px;
+            overflow: hidden;
         }
 
-        .rating {
-            color: #fdcb6e;
-            margin-bottom: 10px;
-            font-size: 12px;
-        }
-
-        .price-box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .price-box { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
             margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid var(--gray-light);
         }
 
-        .price-tag {
+        .price-tag { 
+            color: var(--dark); 
+            font-size: 1.2rem; 
+            font-weight: 800; 
+        }
+
+        .cart-icon { 
+            width: 38px; 
+            height: 38px; 
+            border-radius: 50%; 
+            background: #e0f2f1; 
             color: var(--primary);
-            font-size: 1.2rem;
-            font-weight: 800;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
 
-        .cart-icon {
-            width: 35px;
-            height: 35px;
+        #backToTop {
+            display: none; 
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
             border-radius: 50%;
-            background: #f0fdfa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        #backToTop:hover {
+            background-color: var(--dark);
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .navbar { padding: 15px 20px; }
+            #backToTop { bottom: 20px; right: 20px; width: 45px; height: 45px; }
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <!--les barre de navigation-->
-        <section id="header">
-            <!--logo dela la page-->
-            <a href="#">
-                <img src="images/logo.jpeg" class="logo" alt="logo">
-            </a>
-            <!-- les page du site  -->
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index2.html">Boutique</a></li>
-                <li><a href="produit.html">Produit</a></li>
-                <li><a href="club.html">Club</a></li>
-                <li><a href="inscription.html">Contact</a></li>
-                <!-- pour afficher icône -->
-                <li><a href="index2.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
 
-            </ul>
-            <div id="mobil" class="mobil">
-                <i id="bar" class="fas fa-outdent"></i>
-            </div>
-        </section>
+<nav class="navbar">
+    <a href="#" class="logo">OutifitHub</a>
+    
+    <ul class="nav-links">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Homme</a></li>
+        <li><a href="#">Femme</a></li>
+        <li><a href="#">Collections</a></li>
+    </ul>
 
-    </header>
+    <div class="nav-icons">
+        <button class="icon-btn">🔍</button>
+        <button class="icon-btn">👤</button>
+        <button class="icon-btn">🛒</button>
+    </div>
+</nav>
 
+<div class="main-content">
     <div class="header-section">
-        <h1>OutifitHub Maroc</h1>
+        <h1>Nos Produits</h1>
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterSelection('all')">Tous</button>
             <button class="filter-btn" onclick="filterSelection('homme')">Homme</button>
             <button class="filter-btn" onclick="filterSelection('femme')">Femme</button>
-
-
         </div>
     </div>
 
     <div class="grid-container" id="productGrid"></div>
+</div>
 
-    <script>
+<button id="backToTop" title="Retour en haut">↑</button>
 
-        const bar = document.getElementById('bar');
-        const close = document.getElementById('close');
-        const nav = document.getElementById('navbar');
+<script>
+    const products = [
+        { cat: 'homme', name: "Costume Slim Fit Business", img: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=500&q=80" }, 
+        { cat: 'homme', name: "Veste en Cuir Noir", img: "https://images.unsplash.com/photo-1520975954732-3cdd221648b4?w=500&q=80" },
+        { cat: 'homme', name: "Chemise Blanche Classique", img: "https://images.unsplash.com/photo-1598033129183-c4f50c7176c8?w=500&q=80" }, 
+        { cat: 'homme', name: "Sweat à Capuche Urban", img: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80" },
+        { cat: 'homme', name: "Polo Bleu Coton", img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500&q=80" },
+        { cat: 'homme', name: "Jean Slim Indigo", img: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&q=80" }, 
+        { cat: 'homme', name: "Blazer Gris Casual", img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" },
+        { cat: 'homme', name: "Manteau d'Hiver Long", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=500&q=80" },
+        { cat: 'homme', name: "T-shirt Oversize Street", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&q=80" }, 
+        { cat: 'homme', name: "Pantalon Chino Beige", img: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500&q=80" },
 
-        if (bar) {
-            bar.addEventListener('click', () => {
-                nav.classList.add('active');
-            });
-        }
+        { cat: 'femme', name: "Robe de Soirée Elégante", img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&q=80" }, 
+        { cat: 'femme', name: "Veste Tailleur Rose", img: "https://images.unsplash.com/photo-1548624149-f7b3166883b8?w=500&q=80" },
+        { cat: 'femme', name: "Top en Dentelle Blanc", img: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&q=80" }, 
+        { cat: 'femme', name: "Jean Mom High Waist", img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500&q=80" },
+        { cat: 'femme', name: "Robe d'Été Fleurie", img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80" }, 
+        { cat: 'femme', name: "Combinaison Chic Noire", img: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=500&q=80" },
+        { cat: 'femme', name: "Pull en Maille Doux", img: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500&q=80" }, 
+        { cat: 'femme', name: "Trench Coat Beige", img: "https://images.unsplash.com/photo-1591032890632-446777c5c74f?w=500&q=80" },
+        { cat: 'femme', name: "Jupe Plissée Satin", img: "https://images.unsplash.com/photo-1583496661160-fb41a4a0aaa6?w=500&q=80" }, 
+        { cat: 'femme', name: "Blouse en Soie Bleue", img: "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=500&q=80" }
+    ];
 
-        if (close) {
-            close.addEventListener('click', () => {
-                nav.classList.remove('active');
-            });
-        }
+    function displayProducts(category) {
+        const grid = document.getElementById('productGrid');
+        grid.innerHTML = '';
+        const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
 
+        filtered.forEach((p) => {
+            const price = Math.floor(Math.random() * (750 - 150) + 150);
+            grid.innerHTML += `
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="${p.img}" alt="${p.name}" class="product-image" onerror="this.src='https://via.placeholder.com/400x500?text=Mode+Hub'">
+                    </div>
+                    <div class="card-details">
+                        <span class="brand-label">OutifitHub</span>
+                        <h3 class="item-title">${p.name}</h3>
+                        <div class="price-box">
+                            <span class="price-tag">${price} DH</span>
+                            <div class="cart-icon">🛒</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
 
-
-
-        const products = [
-            { cat: 'homme', name: "Costume Slim Fit" }, { cat: 'homme', name: "Jean Brut Indigo" },
-            { cat: 'homme', name: "Chemise Oxford" }, { cat: 'homme', name: "Sweat à capuche Sport" },
-            { cat: 'homme', name: "Pantalon Cargo Militaire" }, { cat: 'homme', name: "Blazer Casual Gris" },
-            { cat: 'homme', name: "Polo en Coton Piqué" }, { cat: 'homme', name: "Veste en Jean Homme" },
-            { cat: 'homme', name: "Short de Bain Tropique" }, { cat: 'homme', name: "T-shirt Oversize Street" },
-            { cat: 'homme', name: "Pull Col Camionneur" }, { cat: 'homme', name: "Veste Cuir Perfecto" },
-            { cat: 'homme', name: "Pantalon Chino Beige" }, { cat: 'homme', name: "Veste Polaire sans manche" },
-            { cat: 'homme', name: "Survêtement de Football" }, { cat: 'homme', name: "Chemise à Carreaux Bûcheron" },
-            { cat: 'homme', name: "Manteau Long en Laine" }, { cat: 'homme', name: "Débardeur Musculation" },
-            { cat: 'homme', name: "Short en Molleton" }, { cat: 'homme', name: "Bomber MA-1 Kaki" },
-            { cat: 'homme', name: "Chemisette d'été" }, { cat: 'homme', name: "Cardigan à boutons" },
-            { cat: 'homme', name: "Pantalon de Jogging" }, { cat: 'homme', name: "Parka d'hiver" },
-            { cat: 'homme', name: "T-shirt Col Tunisien" },
-
-            { cat: 'femme', name: "Robe de Soirée Satin" }, { cat: 'femme', name: "Jupe Plissée Pastel" },
-            { cat: 'femme', name: "Top en Dentelle Blanc" }, { cat: 'femme', name: "Jean Mom High Waist" },
-            { cat: 'femme', name: "Blouse Fleurie Bohème" }, { cat: 'femme', name: "Combinaison Pantalon" },
-            { cat: 'femme', name: "Veste Tailleur Cintrée" }, { cat: 'femme', name: "Robe d'été Légère" },
-            { cat: 'femme', name: "Legging de Yoga Pro" }, { cat: 'femme', name: "Jupe en Cuir Noir" },
-            { cat: 'femme', name: "Cardigan Long en Maille" }, { cat: 'femme', name: "Maillot de Bain 1 pièce" },
-            { cat: 'femme', name: "Trench Coat Classique" }, { cat: 'femme', name: "Pull Col Roulé Cachemire" },
-            { cat: 'femme', name: "Short en Jean Taille Haute" }, { cat: 'femme', name: "Robe Chemise Rayée" },
-            { cat: 'femme', name: "Top Crop à Volants" }, { cat: 'femme', name: "Pantalon Palazzo Large" },
-            { cat: 'femme', name: "Veste Teddy Rose" }, { cat: 'femme', name: "Pyjama en Satin Luxe" },
-            { cat: 'femme', name: "Kimono Imprimé" }, { cat: 'femme', name: "Salopette en Jean Femme" },
-            { cat: 'femme', name: "Jupe Crayon Bureau" }, { cat: 'femme', name: "Body Manches Dentelle" },
-            { cat: 'femme', name: "Veste Fausse Fourrure" }
-        ];
-
-        function displayProducts(category) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-            const filtered = category === 'all' ? products : products.filter(p => p.cat === category);
-
-            filtered.forEach((p) => {
-                const price = Math.floor(Math.random() * (750 - 150) + 150);
-                grid.innerHTML += `
-    <div class="product-card">
-        <div class="image-slot">[Photo ${p.cat.toUpperCase()} : ${p.name}]</div>
-        <span class="brand-label">OutifitHub</span>
-        <div class="item-title">${p.name}</div>
-        <div class="rating">★★★★★</div>
-        <div class="price-box">
-            <span class="price-tag">${price} DH</span>
-            <div class="cart-icon">🛒</div>
-        </div>
-    </div>
-    `;
-            });
-        }
-
-        function filterSelection(category) {
-            displayProducts(category);
-            let btns = document.getElementsByClassName("filter-btn");
-            for (let i = 0; i < btns.length; i++) {
-                btns[i].classList.remove("active"); if
-                    (btns[i].innerText.toLowerCase() === category || (category === 'all' && btns[i].innerText === 'Tous')) {
-                    btns[i].classList.add("active");
-                }
+    function filterSelection(category) {
+        displayProducts(category);
+        let btns = document.getElementsByClassName("filter-btn");
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].classList.remove("active");
+            if (category === 'all' && btns[i].innerText === 'Tous') {
+                btns[i].classList.add("active");
+            } else if (btns[i].innerText.toLowerCase() === category) {
+                btns[i].classList.add("active");
             }
-        } displayProducts('all'); </script>
-</body>
+        }
+    }
 
+    const backBtn = document.getElementById("backToTop");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backBtn.style.display = "block";
+        } else {
+            backBtn.style.display = "none";
+        }
+    };
+
+    backBtn.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    displayProducts('all');
+</script>
+</body>
 </html>
