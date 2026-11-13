@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar-MA" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OutfitHub — القطعة</title>
+  <meta name="description" content="فريپري أونلاين ف المغرب: حوايج ديال الماركات مستعملين، كل قطعة مصورة بحالتها الحقيقية. الخلاص عند الاستلام.">
+  <meta name="theme-color" content="#1F6B4A">
+
+  <!-- Police IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="produit">
+
+  <a class="lien-evitement" href="#contenu">سير للقطعة</a>
+
+  <!-- ===================== EN-TÊTE ===================== -->
+  <header class="entete">
+    <div class="conteneur entete__ligne">
+      <a href="index.html" class="logo" data-nom-boutique>OutfitHub</a>
+
+      <button type="button" class="btn-panier" data-ouvrir-panier aria-label="السلة">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5.2 4l.4 2H20a1 1 0 0 1 1 1.2l-1.4 7A2 2 0 0 1 17.6 16H8a2 2 0 0 1-2-1.6L3.4 4H2V2h2.4a1 1 0 0 1 1 .8Z"/></svg>
+        <span>السلة</span>
+        <span class="compteur" data-compteur-panier>0</span>
+      </button>
+    </div>
+
+    <nav class="conteneur nav-categories" aria-label="الأقسام">
+      <a href="index.html#boutique" data-lien-categorie="">كلشي</a>
+      <a href="index.html?categorie=رجال#boutique" data-lien-categorie="رجال">رجال</a>
+      <a href="index.html?categorie=عيالات#boutique" data-lien-categorie="عيالات">عيالات</a>
+      <a href="index.html?categorie=دراري#boutique" data-lien-categorie="دراري">دراري</a>
+    </nav>
+  </header>
+
+  <main class="conteneur page-produit" id="contenu">
+    <a href="index.html#boutique" class="retour">→ رجع للحوايج</a>
+
+    <!-- Rempli par script.js à partir de l'id dans l'URL (product.html?id=...) -->
+    <article class="fiche" id="fiche-produit" aria-live="polite">
+      <p class="chargement">كنحملو القطعة…</p>
+    </article>
+  </main>
+
+  <!-- ===================== PIED DE PAGE ===================== -->
+  <footer class="pied">
+    <div class="conteneur pied__grille">
+      <section>
+        <h2 data-nom-boutique>OutfitHub</h2>
+        <p>فريپري أونلاين: حوايج ديال الماركات مستعملين ومختارين بعناية.</p>
+      </section>
+
+      <section>
+        <h2>تواصل معانا</h2>
+        <ul class="pied__liens">
+          <li><a data-lien-whatsapp href="#" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a data-lien-instagram href="#" target="_blank" rel="noopener">إنستغرام</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>التوصيل والرجوع</h2>
+        <p>التوصيل لجميع المدن ف 24 حتى 72 ساعة بـ <span data-prix-livraison>35</span> درهم. كتخلص غير ملي توصلك القطعة.</p>
+        <p>إلا القطعة ماشي بحال الوصف، تقدر ترجعها ف 48 ساعة ونرجعو ليك فلوسك.</p>
+      </section>
+    </div>
+    <p class="pied__copyright">© <span data-annee>2026</span> <span data-nom-boutique>OutfitHub</span></p>
+  </footer>
+
+  <!-- ===================== PANIER (fenêtre latérale) ===================== -->
+  <dialog class="panier" id="panier" aria-labelledby="titre-panier">
+    <div class="panier__entete">
+      <h2 id="titre-panier">السلة ديالك</h2>
+      <button type="button" class="btn-icone" data-fermer-panier aria-label="سد السلة">✕</button>
+    </div>
+
+    <div class="panier__corps">
+      <p class="vide" data-panier-vide>السلة خاوية. زيد شي قطعة عجباتك!</p>
+      <ul class="panier__liste" data-panier-liste></ul>
+
+      <dl class="panier__totaux" data-panier-totaux>
+        <div><dt>الحوايج</dt><dd data-sous-total>0 درهم</dd></div>
+        <div><dt>التوصيل</dt><dd data-livraison>0 درهم</dd></div>
+        <div class="panier__total"><dt>المجموع</dt><dd data-total>0 درهم</dd></div>
+      </dl>
+
+      <form class="formulaire-commande" id="formulaire-commande" novalidate>
+        <h3>المعلومات ديال التوصيل</h3>
+        <div class="champ">
+          <label for="client-nom">السمية الكاملة</label>
+          <input id="client-nom" name="nom" autocomplete="name" required>
+        </div>
+        <div class="champ">
+          <label for="client-tel">رقم التيليفون</label>
+          <input id="client-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" placeholder="06XXXXXXXX" required>
+        </div>
+        <div class="champ">
+          <label for="client-ville">المدينة</label>
+          <input id="client-ville" name="ville" list="villes" autocomplete="address-level2" required>
+          <datalist id="villes">
+            <option value="الدار البيضاء"><option value="الرباط"><option value="مراكش"><option value="فاس">
+            <option value="طنجة"><option value="أكادير"><option value="مكناس"><option value="وجدة">
+            <option value="القنيطرة"><option value="تطوان"><option value="سلا"><option value="الجديدة">
+          </datalist>
+        </div>
+        <div class="champ">
+          <label for="client-adresse">العنوان</label>
+          <textarea id="client-adresse" name="adresse" rows="2" autocomplete="street-address" required></textarea>
+        </div>
+        <p class="erreur" data-erreur-formulaire role="alert" hidden></p>
+        <button type="submit" class="btn btn--principal btn--large">أكد الطلب</button>
+        <p class="note">غادي يتحل واتساب بالطلب كامل. الخلاص عند الاستلام.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Notification courte (ex. « تزادت للسلة ») -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
