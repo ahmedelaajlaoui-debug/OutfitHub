@@ -1,422 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar-MA" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OutfitHub</title>
-    <!-- relie la  le ficher css-->
-    <link rel="stylesheet" href="style.css">
-    <!-- permet de utiliser la police Montserrat-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
-    <!-- permet d'ajouter des icones-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OutfitHub — حوايج ديال الماركات بثمن البال</title>
+  <meta name="description" content="فريپري أونلاين ف المغرب: حوايج ديال الماركات مستعملين، كل قطعة مصورة بحالتها الحقيقية. الخلاص عند الاستلام.">
+  <meta name="theme-color" content="#1F6B4A">
+
+  <!-- Police IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+<body data-page="accueil">
 
-<body>
+  <a class="lien-evitement" href="#boutique">سير للحوايج</a>
 
-  
+  <!-- ===================== EN-TÊTE ===================== -->
+  <header class="entete">
+    <div class="conteneur entete__ligne">
+      <a href="index.html" class="logo" data-nom-boutique>OutfitHub</a>
 
-
-    <header>
-        <!--les barre de navigation-->
-        <section id="header">
-            <!--logo dela la page-->
-            <a href="#">
-                <img src="images/logo.jpeg" class="logo" alt="logo">
-            </a>
-            <!-- les page du site  -->
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index2.html">Boutique</a></li>
-                <li><a href="produit.html">Produit</a></li>
-                <li><a href="club.html">Club</a></li>
-                <li><a href="inscription.html">Contact</a></li>
-                <!-- pour afficher icône -->
-                <li><a href="index2.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
-
-            </ul>
-            <div id="mobil" class="mobil">
-                <i id="bar" class="fas fa-outdent"></i>
-            </div>
-        </section>
-
-    </header>
-    <main>
-        <section id="hero">
-            <h4> Offres exceptionnelles</h4>
-            <h2>offres super rapport qualité-prix</h2>
-            <h1>sur tous les produits </h1>
-            <p>Économisez davantage grâce aux coupons et jusqu'à 50% de réduction !</p>
-            <button><a href="index2.html">Shop Now</a></button>
-        </section>
-        <section id="section3" >
-            <div classe="img1">
-                <img src="images/img1.png" alt="">
-                <h5>Livraison gratuite</h5>
-            </div>
-            <div classe="img2">
-                <img src="images/img2.jpeg" alt="">
-                <h5>commande en ligne</h5>
-            </div>
-            <div classe="img3">
-                <img src="images/img3.jpeg" alt="">
-                <h5>économiser de l'argent</h5>
-            </div>
-            <div classe="img4">
-                <img src="images/img4.jpeg" alt="">
-                <h5>Promotions</h5>
-            </div>
-            <div classe="img5">
-                <img src="images/img5.jpeg" alt="">
-                <h5>Vente heureuse </h5>
-            </div>
-            <div classe="img6">
-                <img src="images/img6.png" alt="">
-                <h5>24/7</h5>
-            </div>
-
-        </section>
-        <section id="product1">
-            <h1>Produits vedettes</h1>
-            <p>Collection été Nouveau design moderne</p>
-            <div class="filter-buttons">
-        <button class="filter-btn active">All</button>
-        <button class="filter-btn">New Arrival</button>
-        <button class="filter-btn">Sale</button>
+      <button type="button" class="btn-panier" data-ouvrir-panier aria-label="السلة">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5.2 4l.4 2H20a1 1 0 0 1 1 1.2l-1.4 7A2 2 0 0 1 17.6 16H8a2 2 0 0 1-2-1.6L3.4 4H2V2h2.4a1 1 0 0 1 1 .8Z"/></svg>
+        <span>السلة</span>
+        <span class="compteur" data-compteur-panier>0</span>
+      </button>
     </div>
-            <div class="pro-container">
-                <div class="pro" onclick="window.location.href='produit.html'"> 
-                    <img src="images/image2.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$120</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro"> 
-                    <img src="images/image1.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$50</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro"> 
-                    <img src="images/image7.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$54</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro"> 
-                    <img src="images/image3.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$100</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro"> 
-                    <img src="images/image4.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$90</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro"> 
-                    <img src="images/image5.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$89</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="pro"> 
-                    <img src="images/image6.jpeg" alt="">
-                    <div class="des">
-                        <span>OutifitHub</span>
-                        <h5>Cartoon Astronaut T-Shirts</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>$68</h4>
-                    </div>
-                    <a href="#"  class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
 
-                <section id="banner" class="section-m1">
-                    <h3>Services de réparation</h3>
-                    <h2>Jusqu'à <span>50% de réduction</span> - sur tous les t-shirts </h2>
-                    <button class="normal"><a href="club.html">Explorez davantage</a> </button>
+    <nav class="conteneur nav-categories" aria-label="الأقسام">
+      <a href="index.html#boutique" data-lien-categorie="">كلشي</a>
+      <a href="index.html?categorie=رجال#boutique" data-lien-categorie="رجال">رجال</a>
+      <a href="index.html?categorie=عيالات#boutique" data-lien-categorie="عيالات">عيالات</a>
+      <a href="index.html?categorie=دراري#boutique" data-lien-categorie="دراري">دراري</a>
+    </nav>
+  </header>
 
-                </section>
-                <section id="product1" classe="p1">
-                    <h1>Nouveautés</h1>
-                    <p>Collection été, nouveau design moderne</p>
-                    <div class="pro-container">
-                        <div class="pro">
-                            <img src="images/n1.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$60</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n2.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$100</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n3.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$120</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n4.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$48</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n5.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$54</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n6.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$20</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n7.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$50</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                        <div class="pro">
-                            <img src="images/n8.jpeg" alt="">
-                            <div class="des">
-                                <span>OutifitHub</span>
-                                <h5>Cartoon Astronaut T-Shirts</h5>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4>$78</h4>
-                            </div>
-                            <a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        </div>
-                    </div>
-                </section>
-                <section id="newsletter">
-                    <div class="newstext">
-                        <h3>Inscrivez-vous à la newsletter</h3>
-                        <p>Recevez par e-mail des mises à jour sur nos dernières offres et sur <span>votre article mis
-                                en avant</span></p>
-                    </div>
-                    <div class="form">
-                        <input type="email" placeholder="Votre adresse e-mail">
-                        <button class="normal"><a href="inscription.html">S'inscrire</a></button>
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="conteneur hero__contenu">
+        <p class="etiquette">كل قطعة كاينة غير وحدة — اللي سبق يربح</p>
+        <h1>حوايج ديال الماركات، بثمن البال</h1>
+        <p class="hero__sous-titre">
+          كنختارو ليك أحسن الحوايج المستعملين، كنغسلوهم ونصوروهم بحالتهم الحقيقية.
+          توصلك القطعة حتى لباب الدار وتخلص ملي توصلك.
+        </p>
+        <a href="#boutique" class="btn btn--principal">شوف الجديد</a>
+      </div>
+    </section>
 
-                    </div>
-                </section>
-                <footer class="section-p1">
-                    <div class="col">                        <h4>Contact</h4>
-                        <p><strong>Address:</strong> Jean Dupont 14, Rue des Cerisiers, Appartement 3B75015 PARIS FRANCE
-                        </p>
-                        <p><strong>Phone :</strong> +212 640602332 /0645949394</p>
-                        <p><strong>Hours :</strong> 9:00 - 00:00 ,Lundu - samedi </p>
-                        <div class="follow">
-                            <h3>Follow </h3>
-                            <div class="icon">
-                                <i class="fab fa-facebook-f"></i>
-                                <i class="fab fa-twitter"></i>
-                                <i class="fab fa-instagram"></i>
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="col" class="col">
-                        <a href="inscription.html">contact us</a>
-                    </div>
-                    
-                    <div class="copyriht">
-                        <p>&copy; 2026 - Projet de Programation web </p>
-                    </div>
-                </footer>
+    <!-- ===================== BANDEAU DE CONFIANCE ===================== -->
+    <section class="bandeau" aria-label="علاش تشري من عندنا">
+      <ul class="conteneur bandeau__liste">
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M3 6h18v12H3V6Zm2 2v8h14V8H5Zm7 1.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM6 9h2v2H6V9Zm10 4h2v2h-2v-2Z"/></svg>
+          <span>الخلاص عند الاستلام</span>
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M2 5h12v3h4l4 4v5h-2a3 3 0 0 1-6 0H9a3 3 0 0 1-6 0H2V5Zm14 5v2h4.2l-2-2H16ZM6 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm11 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+          <span>التوصيل لجميع المدن — <span data-prix-livraison>35</span> درهم</span>
+        </li>
+        <li>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M9 4h6l1.5 2H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3.5L9 4Zm3 4a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg>
+          <span>كل قطعة مصورة بحالتها الحقيقية</span>
+        </li>
+      </ul>
+    </section>
 
-<script>
-const bar = document.getElementById('bar');
-const close = document.getElementById('close');
-const nav = document.getElementById('navbar');
+    <!-- ===================== BOUTIQUE : FILTRES + GRILLE ===================== -->
+    <section id="boutique" class="conteneur boutique" aria-labelledby="titre-boutique">
+      <h2 id="titre-boutique">الحوايج</h2>
 
-if (bar) {
-    bar.addEventListener('click', () => {
-        nav.classList.add('active');
-    });
-}
+      <form class="filtres" id="filtres" role="search" aria-label="قلّب وفلتر">
+        <div class="champ champ--recherche">
+          <label for="recherche">قلّب</label>
+          <input type="search" id="recherche" name="recherche" placeholder="سمية، ماركة…" autocomplete="off">
+        </div>
 
-if (close) {
-    close.addEventListener('click', () => {
-        nav.classList.remove('active');
-    });
-}
+        <div class="champ">
+          <label for="filtre-categorie">القسم</label>
+          <select id="filtre-categorie" name="categorie">
+            <option value="">كلشي</option>
+            <option value="رجال">رجال</option>
+            <option value="عيالات">عيالات</option>
+            <option value="دراري">دراري</option>
+          </select>
+        </div>
 
+        <div class="champ">
+          <label for="filtre-taille">المقاس</label>
+          <select id="filtre-taille" name="taille">
+            <option value="">كاع المقاسات</option>
+            <!-- options générées par script.js à partir de data.js -->
+          </select>
+        </div>
 
+        <div class="champ champ--prix">
+          <label for="filtre-prix">
+            الثمن حتى: <output id="valeur-prix" for="filtre-prix">—</output>
+          </label>
+          <input type="range" id="filtre-prix" name="prixMax" min="0" max="500" step="10" value="500">
+        </div>
 
-</script>
+        <button type="reset" class="btn btn--secondaire">مسح الفلتر</button>
+      </form>
 
+      <p class="resultat-compte" id="resultat-compte" aria-live="polite"></p>
 
+      <ul class="grille-produits" id="grille-produits">
+        <!-- cartes générées par script.js -->
+      </ul>
 
+      <p class="vide" id="aucun-resultat" hidden>ما لقينا حتى قطعة بهاد الفلتر. جرب تبدل شي حاجة.</p>
+    </section>
+  </main>
 
-    </main>
+  <!-- ===================== PIED DE PAGE ===================== -->
+  <footer class="pied">
+    <div class="conteneur pied__grille">
+      <section>
+        <h2 data-nom-boutique>OutfitHub</h2>
+        <p>فريپري أونلاين: حوايج ديال الماركات مستعملين ومختارين بعناية.</p>
+      </section>
+
+      <section>
+        <h2>تواصل معانا</h2>
+        <ul class="pied__liens">
+          <li><a data-lien-whatsapp href="#" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a data-lien-instagram href="#" target="_blank" rel="noopener">إنستغرام</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>التوصيل والرجوع</h2>
+        <p>التوصيل لجميع المدن ف 24 حتى 72 ساعة بـ <span data-prix-livraison>35</span> درهم. كتخلص غير ملي توصلك القطعة.</p>
+        <p>إلا القطعة ماشي بحال الوصف، تقدر ترجعها ف 48 ساعة ونرجعو ليك فلوسك.</p>
+      </section>
+    </div>
+    <p class="pied__copyright">© <span data-annee>2026</span> <span data-nom-boutique>OutfitHub</span></p>
+  </footer>
+
+  <!-- ===================== PANIER (fenêtre latérale) ===================== -->
+  <dialog class="panier" id="panier" aria-labelledby="titre-panier">
+    <div class="panier__entete">
+      <h2 id="titre-panier">السلة ديالك</h2>
+      <button type="button" class="btn-icone" data-fermer-panier aria-label="سد السلة">✕</button>
+    </div>
+
+    <div class="panier__corps">
+      <p class="vide" data-panier-vide>السلة خاوية. زيد شي قطعة عجباتك!</p>
+      <ul class="panier__liste" data-panier-liste></ul>
+
+      <dl class="panier__totaux" data-panier-totaux>
+        <div><dt>الحوايج</dt><dd data-sous-total>0 درهم</dd></div>
+        <div><dt>التوصيل</dt><dd data-livraison>0 درهم</dd></div>
+        <div class="panier__total"><dt>المجموع</dt><dd data-total>0 درهم</dd></div>
+      </dl>
+
+      <form class="formulaire-commande" id="formulaire-commande" novalidate>
+        <h3>المعلومات ديال التوصيل</h3>
+        <div class="champ">
+          <label for="client-nom">السمية الكاملة</label>
+          <input id="client-nom" name="nom" autocomplete="name" required>
+        </div>
+        <div class="champ">
+          <label for="client-tel">رقم التيليفون</label>
+          <input id="client-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" placeholder="06XXXXXXXX" required>
+        </div>
+        <div class="champ">
+          <label for="client-ville">المدينة</label>
+          <input id="client-ville" name="ville" list="villes" autocomplete="address-level2" required>
+          <datalist id="villes">
+            <option value="الدار البيضاء"><option value="الرباط"><option value="مراكش"><option value="فاس">
+            <option value="طنجة"><option value="أكادير"><option value="مكناس"><option value="وجدة">
+            <option value="القنيطرة"><option value="تطوان"><option value="سلا"><option value="الجديدة">
+          </datalist>
+        </div>
+        <div class="champ">
+          <label for="client-adresse">العنوان</label>
+          <textarea id="client-adresse" name="adresse" rows="2" autocomplete="street-address" required></textarea>
+        </div>
+        <p class="erreur" data-erreur-formulaire role="alert" hidden></p>
+        <button type="submit" class="btn btn--principal btn--large">أكد الطلب</button>
+        <p class="note">غادي يتحل واتساب بالطلب كامل. الخلاص عند الاستلام.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Notification courte (ex. « تزادت للسلة ») -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
